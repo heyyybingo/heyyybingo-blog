@@ -1,0 +1,32 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout branch
+        uses: actions/checkout@v3
+
+      - name: setup node.js env
+        uses: actions/setup-node@v3
+        with:
+          node-version: "16.3.0"
+
+      - name: 安装依赖
+        run: npm install
+
+      - name: 打包
+        run: npm run build
+
+      - name: SFTP Deploy
+        uses: wlixcc/SFTP-Deploy-Action@v1.2.2
+        with:
+          server: ${{ secrets.SERVER_IP }}
+          ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
+          local_path: "./public/*"
+          remote_path: "/usr/share/nginx/heyyybingo-blog"
