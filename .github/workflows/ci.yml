@@ -30,4 +30,4 @@ jobs:
           server: ${{ secrets.SERVER_IP }}
           ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
           local_path: "./public/*"
-          remote_path: "/usr/share/nginx/heyyybingo-blog"
+          remote_path: "/var/www/heyyybingo-blog"
