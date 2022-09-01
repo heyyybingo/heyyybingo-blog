@@ -3,11 +3,11 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
+title: HY
 subtitle: ""
 description: ""
 keywords:
-author: John Doe
+author: heyyybingo
 language: en
 timezone: ""
 
@@ -97,8 +97,8 @@ ignore:
 
 # Extensions
 ## Plugins: https://hexo.io/plugins/
-## Themes: https://hexo.io/themes/
-theme: landscape
+# ## Themes: https://hexo.io/themes/
+theme: "ayer"
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
