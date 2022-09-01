@@ -23,11 +23,12 @@ jobs:
       - name: 打包
         run: npm run build
 
-      - name: SFTP Deploy
-        uses: wlixcc/SFTP-Deploy-Action@v1.2.2
-        with:
-          username: root
-          server: ${{ secrets.SERVER_IP }}
-          ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
-          local_path: "./public/*"
-          remote_path: "/var/www/heyyybingo-blog"
+      - name: Deploy to Server
+        uses: easingthemes/ssh-deploy@main
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SERVER_SSH_KEY }}
+          ARGS: "-av"
+          SOURCE: "public/"
+          REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
+          REMOTE_USER: ${{ secrets.REMOTE_USER }}
+          TARGET: ${{ secrets.REMOTE_TARGET }}
