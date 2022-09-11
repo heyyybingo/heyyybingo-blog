@@ -182,7 +182,7 @@ class MyPromise {
     //实现链式传递，返回一个promise
     return new MyPromise((resolve, reject) => {
       const resolvePromise = (cb) => {
-       //未任务，保证不是立即执行的
+       //保证不是立即执行的，可以使用queueMicrotask创建微任务
        setTimeout(()=>{
          try {
            //取回调执行结果
