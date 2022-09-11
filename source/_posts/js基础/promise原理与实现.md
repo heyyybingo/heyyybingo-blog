@@ -2,7 +2,7 @@
 title: promise原理与实现
 date: 2022-09-05 21:00:00
 categories:
-  - js
+  - js基础
 tags:
   - js
   - 异步编程
