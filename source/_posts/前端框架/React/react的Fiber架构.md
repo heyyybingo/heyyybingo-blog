@@ -188,8 +188,8 @@ type Fiber = {
 |};
 ```
 
-# fiber 的生成
+## 参考链接
 
-## 初始化
+[图解 react](https://7kms.github.io/react-illustration-series/main/fibertree-update/)
 
-## 更新
+[react 技术揭秘](https://react.iamkasong.com/)
