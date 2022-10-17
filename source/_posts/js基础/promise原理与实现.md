@@ -41,7 +41,6 @@ console.log("Hi!");
 # 优缺点
 
 Promise 的一个重要优点是它将逐渐被用作浏览器的异步 API ，统一现在各种各样的 API ，（例如 fetch，动态模块引入）
-相比事件，promise 可以进行异步处理
 
 ## 缺点
 
@@ -200,6 +199,11 @@ class MyPromise {
           const cbResult = cb(this.promiseResult);
 
           if (cbResult instanceof MyPromise) {
+            // 如果返回值是Promise
+            // 如果返回值是promise对象，返回值为成功，新promise就是成功
+            // 如果返回值是promise对象，返回值为失败，新promise就是失败
+            // 谁知道返回的promise是失败成功？只有then知道
+
             cbResult.then(resolve, reject);
           } else {
             resolve(cbResult);
@@ -211,12 +215,12 @@ class MyPromise {
        })
       };
       if (this.promiseState === PromiseState.FULLFILLED) {
-        onFullfilled(this.promiseResult);
+        resolvePromise(onFullfilled);
       } else if (this.promiseState === PromiseState.REJECTED) {
-        onRejected(this.promiseResult);
+        resolvePromise(onRejected);
       } else if (this.promiseState === PromiseState.PENDING) {
-        this.onFullfilledCallbacks.push(onFullfilled);
-        this.onRejectedCallbacks.push(onRejected);
+        this.onFullfilledCallbacks.push(resolvePromise.bind(this,onFullfilled));
+        this.onRejectedCallbacks.push(resolvePromise.bind(this,onRejected));
       }
     });
   }
