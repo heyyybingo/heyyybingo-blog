@@ -1,5 +1,5 @@
 ---
-title: promise原理与实现
+title: let与var
 date: 2022-09-27 21:00:00
 categories:
   - js基础
