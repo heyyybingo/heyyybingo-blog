@@ -1,5 +1,5 @@
 ---
-title: 如何手写一个call或apply方法
+title: 如何手写一个bind方法
 date: 2022-10-23 21:00:00
 categories:
   - js基础

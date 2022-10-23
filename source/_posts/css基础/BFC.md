@@ -2,7 +2,7 @@
 title: react生命周期
 date: 2022-09-20 21:00:00
 categories:
-  - css
+  - css基础
 tags:
   - css
   - BFC
