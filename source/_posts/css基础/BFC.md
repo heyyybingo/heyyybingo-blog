@@ -1,5 +1,5 @@
 ---
-title: react生命周期
+title: BFC
 date: 2022-09-20 21:00:00
 categories:
   - css基础
@@ -29,4 +29,12 @@ tags:
 
 - 包含内部浮动（防止浮动元素高度塌陷）
 - 排除外部浮动（实现双列布局）
+
+<iframe src="https://codesandbox.io/embed/kind-maxwell-1b0qr3?fontsize=14&hidenavigation=1&theme=dark"
+     style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+     title="kind-maxwell-1b0qr3"
+     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+   ></iframe>
+   
 - 阻止外边距重叠
