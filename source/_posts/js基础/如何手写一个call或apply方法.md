@@ -10,7 +10,7 @@ tags:
   - this
 ---
 
-## call，apply 使用方法与区别
+# call，apply 使用方法与区别
 
 作用：改变 this 指向；
 区别：入参形式
